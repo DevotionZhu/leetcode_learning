@@ -16,4 +16,5 @@ class Solution(object):
 
         left = self.inorderTraversal(root.left) if root.left else []
         right = self.inorderTraversal(root.right) if root.right else []
+
         return left + [root.val] + right
