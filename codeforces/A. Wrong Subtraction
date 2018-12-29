@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	string iNumber;
+	string iTimes;
+	cin >> iNumber >> iTimes;
+	
+	int number = atoi(iNumber.c_str());
+	int times = atoi(iTimes.c_str());
+
+	while (times > 0) {
+		number = number % 10 == 0 ? number / 10 : number - 1;
+		times--;	
+	}
+	
+	cout << number << endl;
+	
+	return 0;
+}
