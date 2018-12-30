@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int step(int num) {
+	if (num == 1 || num == 2 || num == 3 || num == 4
+		|| num == 5) {
+		return 1;	
+	}
+	
+	vector<int> res;
+	res.push_back(0);
+	res.push_back(1);
+	res.push_back(1);
+	res.push_back(1);
+	res.push_back(1);
+	res.push_back(1);
+	
+	int i = 6;
+	while (i <= num) {
+	    res.push_back(res[i -1] + 1);
+	    if (res[i] > res[i -2] + 1) res[i] = res[i -2] + 1;
+	    if (res[i] > res[i -3] + 1) res[i] = res[i -3] + 1;
+	    if (res[i] > res[i -4] + 1) res[i] = res[i -4] + 1;
+	    if (res[i] > res[i -5] + 1) res[i] = res[i -5] + 1;
+	    i++;
+	}
+	
+	return res[num];
+}
+
+
+int main()
+{
+	string input;
+	cin >> input;
+
+	int num = atoi(input.c_str());
+	cout << step(num) << endl;
+	return 0;	
+}

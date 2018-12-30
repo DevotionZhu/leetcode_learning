@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string inputNum;
+	cin >> inputNum;
+	
+	if (inputNum == "0") {
+		cout << "0" << endl;
+		return 0;
+	}
+
+	string pre, now;
+	cin >> pre;
+
+	int num = 1;
+	while (cin >> now) {
+		if (pre[1] == now[0]) {
+			num++;		
+		}
+		pre = now;
+	}
+	
+	cout << num << endl;
+	return 0;
+}

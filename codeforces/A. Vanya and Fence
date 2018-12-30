@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string inputNum, inputHeight;
+	string personHeight;
+	cin >> inputNum >> inputHeight;
+	int fenceHeight = atoi(inputHeight.c_str());	
+
+	int roadLength = 0;
+	while (cin >> personHeight) {
+		int height = atoi(personHeight.c_str());
+		roadLength = height > fenceHeight ? roadLength + 2 : roadLength + 1;	
+	}
+
+	cout << roadLength << endl;
+
+	return 0;
+}
