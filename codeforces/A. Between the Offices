@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+
+using namespace std;
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	
+	string num, input;
+	char pre, now;
+	cin >> num;
+	cin >> input;
+	
+	int len = atoi(num.c_str());
+	
+	int m = 0;
+	int n = 0;
+	
+	pre = input[0];
+	int i = 1;
+	while (i < len) {
+	    now = input[i];
+		if (pre == 'F' && now == 'S' ) {
+			m++;
+		} else if (pre == 'S' && now == 'F') {
+			n++;
+		}
+		
+		pre = now;
+		i++;
+	}
+	
+	cout << (n > m ? "YES" : "NO") << endl;
+	
+	return 0;
+}
