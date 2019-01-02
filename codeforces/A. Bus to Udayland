@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string input, seats;
+	cin >> input;
+	int num = atoi(input.c_str());
+	string output = "";
+	bool have_seat = false;
+
+	for (int i = 0 ;i < num; i++) {
+		cin >> seats;
+		if ( seats[0] == 'O' && seats[1] == 'O' ) {
+			output += "++|" + seats.substr(3) + "\n";
+			have_seat = true;
+			break;		
+		} else if ( seats[3] == 'O' && seats[4] == 'O' ) {
+			output += seats.substr(0,2) + "|++\n";
+			have_seat = true;
+			break;
+		} else {
+			output += seats + "\n";
+		}
+	}
+
+	if (have_seat) {
+		cout << "YES" << endl;
+		cout << output;
+		while (cin >> input) {
+			cout << input << endl;
+		}
+	} else {
+		cout << "NO" << endl;
+	}
+}

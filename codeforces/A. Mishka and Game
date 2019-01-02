@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string input, m, n;
+	cin >> input;
+
+	int m_win = 0;
+
+	while (cin >> m >> n) {
+		if (m > n) {
+		    m_win++;		
+		} else if ( m < n) {
+		    m_win--;
+		}
+	}
+
+	if (m_win > 0) {
+		cout << "Mishka" << endl;
+	} else if (m_win < 0) {
+		cout << "Chris" << endl;		
+	} else {
+		cout << "Friendship is magic!^^" << endl;	
+	}
+
+	return 0;
+}
