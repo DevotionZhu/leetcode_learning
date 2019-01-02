@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+
+using namespace std;
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	
+	string input;
+	cin >> input;
+	int num = atoi(input.c_str());
+	
+	string e,g,m,h;
+	int i = 0;
+	int base_score = 0;
+	int max_than_base = 0;
+	while ( i < num) {
+		cin >> e >> g >> m >> h;
+		int sum = atoi(e.c_str()) + atoi(g.c_str()) + \
+			atoi(m.c_str()) + atoi(h.c_str());
+		if (i == 0) base_score = sum;
+		if (sum > base_score) max_than_base++;
+		i++;
+	}
+	
+	cout << max_than_base + 1 << endl;
+
+	return 0;
+}

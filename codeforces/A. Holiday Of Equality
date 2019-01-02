@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string input;
+	cin >> input;
+	int num = atoi(input.c_str());
+	
+	int sum = 0;
+	int max = 0;	
+	while (cin >> input) {
+		int tmp = atoi(input.c_str());
+		if (tmp > max) max = tmp;
+		sum += tmp;
+	}
+
+	cout << (max*num - sum) << endl;
+	return 0;
+}
