@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+
+using namespace std;
+
+#define RED   2
+#define GREEN 5
+#define BLUE  8
+
+
+int myCeil(int m, int n)
+{
+	return m%n ? m/n + 1 : m/n;
+}
+
+int main()
+{
+	int friends, sheets;
+	cin >> friends >> sheets;
+
+	cout << ( myCeil(RED*friends, sheets) + myCeil(GREEN*friends, sheets) + \
+		 myCeil(BLUE*friends, sheets) ) << endl;
+	return 0;
+}

@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	int floors, flats;
+	cin >> floors >> flats;
+
+	int window1, window2;
+	int result = 0;
+	while (cin >> window1 >> window2) {
+		if (window1 || window2) {
+			result++;
+		}
+	}
+
+	cout << result << endl;
+	return 0;
+}
