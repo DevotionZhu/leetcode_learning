@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+
+int main()
+{
+	vector<int> time(4);
+	for (int i = 0; i < 4; i++) cin >> time[i];
+
+
+	string tmp;
+	cin >> tmp;
+	int sum = 0;
+	int i = 0;
+	while (i < tmp.length()) {
+	    int index = tmp[i] - '0';
+		sum += time[index-1];
+		i++;
+	}
+	
+	cout << sum << endl;
+	return 0;
+}
