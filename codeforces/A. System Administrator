@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	int serial, sucess, fail;
+	int result1 = 0, result2 = 0;
+	while (cin >> serial >> sucess >> fail) {
+		if (serial == 1) {
+			result1 += sucess - fail;
+		} else {
+			result2	+= sucess - fail;
+		}
+	}
+	
+	result1 >= 0 ? cout << "LIVE" << endl : cout << "DEAD" << endl;
+	result2 >= 0 ? cout << "LIVE" << endl : cout << "DEAD" << endl;
+	return 0;	
+}
