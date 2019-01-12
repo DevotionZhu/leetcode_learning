@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	
+	string row;
+	cin >> row;
+	
+	char pre = row[0];
+	int count = 0;
+	for (int i = 1; i < row.length(); i++) {
+		char now = row[i];
+		if (pre == now) count++;
+		pre = now;
+	}
+	
+	cout << count << endl;
+	return 0;
+}

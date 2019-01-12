@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include <set>
+
+using namespace std;
+
+int main()
+{
+	string name;
+	cin >> name;
+	
+	set<char> exist;
+	for (int i=0; i < name.length(); i++) {
+		exist.insert(name[i]);
+	}
+
+	exist.size() % 2 ? cout << "IGNORE HIM!" << endl : cout << "CHAT WITH HER!" << endl;
+	return 0;
+}
