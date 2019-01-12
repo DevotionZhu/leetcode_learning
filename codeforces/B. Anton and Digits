@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+
+int main()
+{
+	int n2, n3, n5, n6;
+	cin >> n2 >> n3 >> n5 >> n6;
+
+	int n256 = MIN(MIN(n2, n5), n6);
+	int n32  = MIN(n2-n256, n3);
+	
+	cout << (n256*256 + n32*32) << endl;	
+	
+}

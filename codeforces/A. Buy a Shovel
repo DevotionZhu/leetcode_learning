@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int num, r;
+	cin >> num >> r;
+	
+	int singleDigit = num % 10;
+	for (int i = 1; i <= 10; i++) {
+		if (singleDigit*i % 10 == 0 || singleDigit*i % 10 == r) {
+		    cout << i << endl;
+		    break;
+		}
+	}
+	
+}

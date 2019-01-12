@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+#include <utility>
+
+using namespace std;
+
+int count(const pair<int, int> a, const pair<int, int> b)
+{
+	int num = 0;
+	if (a.first == b.second) num++;
+	if (b.first == a.second) num++;
+	return num;
+}
+
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	vector<pair<int, int>> teams;
+	
+	int a,b;	
+	while (cin >> a >> b) {
+		teams.push_back(make_pair(a, b));
+	}
+
+	int result = 0;
+	for (int i = 0; i < n; i++) {
+		for (int j = i+1; j < n; j++) {
+			result += count(teams[i], teams[j]);	
+		}
+	}
+
+	cout << result << endl;
+}
