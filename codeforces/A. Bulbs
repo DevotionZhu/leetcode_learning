@@ -1,0 +1,52 @@
+#include <iostream>
+#include <vector>
+#include <set>
+#include <string>
+
+using namespace std;
+
+vector<string> split(const string& str, const string& delim)
+{
+    vector<string> tokens;
+    size_t prev = 0, pos = 0;
+    do
+    {
+        pos = str.find(delim, prev);
+        if (pos == string::npos) pos = str.length();
+        string token = str.substr(prev, pos-prev);
+        if (!token.empty()) tokens.push_back(token);
+        prev = pos + delim.length();
+    }
+    while (pos < str.length() && prev < str.length());
+    return tokens;
+}
+
+int statistic(string light, int m, set<int> &lightOn) {
+	vector<int> table(m);
+	vector<string> t = split(light, " ");
+	for (int i = 0; i < m && i < t.size(); i++) {
+		int index = atoi(t[i].c_str());
+		if (index != 0)
+		    lightOn.insert(index);
+	}
+}
+
+int main()
+{
+	int n,m;
+	
+	string tmp;
+	getline(cin, tmp);
+	vector<string> nums = split(tmp, " ");
+	n = atoi(nums[0].c_str());
+	m = atoi(nums[1].c_str());
+	
+	set<int> lightOn;
+	
+	for (int i = 0; i < n ; i++) {
+		getline(cin, tmp);
+		statistic(tmp, m, lightOn);
+	}
+	
+	cout << (lightOn.size() < m ? "NO" : "YES") << endl;
+}
