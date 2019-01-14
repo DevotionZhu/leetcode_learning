@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+#include <climits>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	vector<int> keyboards(n);
+	for (int i = 0; i < n; i++) cin >> keyboards[i];
+
+	int MAX = 0;
+	int MIN = INT_MAX;
+	for (int i = 0; i < n; i++) {
+		if (MAX < keyboards[i]) MAX = keyboards[i];
+		if (MIN > keyboards[i]) MIN = keyboards[i];
+	}
+
+	cout << (MAX - MIN - n + 1) << endl;
+}
