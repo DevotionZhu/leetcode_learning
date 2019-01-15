@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+#define NUM 1000
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	vector<int> fibonacci(NUM);
+	fibonacci[0] = fibonacci[1] = 1;
+	for (int i = 2; i < NUM; i++) {
+		fibonacci[i] = fibonacci[i-1] + fibonacci[i-2];
+	}
+
+	for (int i = 1; i <= n; i++) {
+		auto iter = find(fibonacci.begin(), fibonacci.end(), i);
+		if (iter != fibonacci.end()) {
+			cout << "O";
+		} else {
+			cout << "o";
+		}
+	}
+}

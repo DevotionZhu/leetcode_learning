@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+#define RANK_RED 2400
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	string name;
+	int before, after;
+
+	while (cin >> name >> before >> after) {
+		if (before >= RANK_RED && after > before) {
+			cout << "YES" << endl;
+			return 0;
+		}
+	}
+
+	cout << "NO" << endl;
+}
