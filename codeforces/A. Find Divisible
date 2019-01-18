@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	long l, r;
+	while (cin >> l >> r) {
+		for (int i = l; i <= r; i++) {
+			for (int j = 2; i*j <= r; j++) {
+				cout << i << " " << i*j << endl;
+				goto STEP;
+			}
+		}
+		STEP: ;
+	}
+}
