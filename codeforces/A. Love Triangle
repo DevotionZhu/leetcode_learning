@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+bool checkTriangle(const int index, const vector<int> f)
+{
+	int tmp = index;
+	int i = 0;
+	while (i < 3) {
+		tmp = f[tmp] - 1;
+		i++;
+	}
+
+	return tmp == index;
+}
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	vector<int> f(n);
+	for (int i = 0; i < n; i++) {
+		cin >> f[i];
+	}
+
+	for (int i = 0; i < n; i++) {
+		if (checkTriangle(i, f)) {
+			cout << "YES" << endl;
+			return 0;		
+		}
+	}
+	cout << "NO" << endl;
+}
