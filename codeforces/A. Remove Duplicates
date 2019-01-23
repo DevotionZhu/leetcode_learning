@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+#include <set>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	
+	vector<int> nums(n);
+	for (int i = 0; i < n; i++) cin >> nums[i]; 
+
+	string buf = "";
+	set<int> exist;
+	int num = 0;
+	for (int i = n-1; i >= 0; i--) {
+		if (exist.find(nums[i]) == exist.end()) {
+			num++;
+			buf = to_string(nums[i]) + " " + buf;
+		}
+
+		exist.insert(nums[i]);
+	}
+
+	cout << num << endl << buf << endl;
+}
+
