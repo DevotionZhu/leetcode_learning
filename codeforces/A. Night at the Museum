@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+
+int count(const char s, const char e) {
+	int x = abs(s-e);
+	int y = 26 - x;
+	return x > y ? y : x;
+}
+
+int main()
+{
+	string letters;
+	cin >> letters;
+
+	char start = 'a', end;
+	int res = 0;
+	for (int i = 0; i < letters.length(); i++) {
+		end = letters[i];
+		res += count (start, end);
+		start = end;
+	}
+
+	cout << res << endl;
+}
