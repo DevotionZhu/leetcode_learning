@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	
+	int num = n;
+	for (int i = 1; i <= n; i++) {
+		string t = to_string(i);
+		num -= t.length();
+		if (num <= 0){
+		    cout << t[t.length() + num - 1] << endl;
+		    break;
+		}
+	}
+}

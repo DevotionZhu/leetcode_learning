@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+	int length, type1, type2, ping1, ping2;
+	cin >> length >> type1 >> type2 >> ping1 >> ping2;
+
+	int costTime1 = length*type1 + ping1*2;
+	int costTime2 = length*type2 + ping2*2;
+	
+	if (costTime1 > costTime2) {
+		cout << "Second" << endl;
+	} else if (costTime1 < costTime2) {
+		cout << "First" << endl;
+	} else {
+		cout << "Friendship" << endl;
+	}
+	
+
+	return 0;
+}

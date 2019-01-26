@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+#define MAX_NUM 101
+
+int main()
+{
+	string input_num, input_endpoint;
+	cin >> input_num >> input_endpoint;
+	
+	int endpoint = atoi(input_endpoint.c_str());
+	int table[MAX_NUM] = {0};
+	
+	string start, end;
+	while (cin >> start >> end) {
+		int s = atoi(start.c_str());
+		int e = atoi(end.c_str());
+		
+		for (int i = s; i <= e; i++) {
+			table[i] = 1;
+		}
+	}
+
+	int out_of_num = 0;
+	string res = "";
+	for (int i = 1 ;i <= endpoint; i++) {
+		if (table[i] == 1) {
+			out_of_num++;
+		} else {
+			res += to_string(i) + " ";
+		}	
+	}
+    
+	cout << (endpoint - out_of_num) << endl;
+	cout << res << endl;
+}

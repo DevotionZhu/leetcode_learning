@@ -1,0 +1,31 @@
+#include <iostream>
+#include <map>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	int n, k;
+	string str;
+	cin >> n >> k >> str;
+
+	map<char, int> result;
+	
+	for (int i = 0; i < n; i++) {
+		char key = str[i];
+		auto value = result.find(key);
+		if (value != result.end()) {
+			result[key] += 1;
+		} else {
+			result[key] = 1;
+		}
+	}
+	
+	int num = n;
+	for (auto &iter : result) {
+		if (iter.second < num ) num = iter.second;
+	}
+
+	cout << (result.size() < k ? 0 : num*k) << endl;
+}

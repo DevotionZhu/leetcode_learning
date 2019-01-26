@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string input_a, input_b, input_c;
+	
+	cin >> input_a >> input_b >> input_c;
+	
+	int a = atoi(input_a.c_str());
+	int b = atoi(input_b.c_str());
+	int c = atoi(input_c.c_str());
+	
+	if (a > b) {
+		if (a > c) {
+			cout << ((b + c) > a ? 0 : (a - b - c + 1)) << endl;		
+		} else {
+			cout << ((a + b) > c ? 0 : (c - a - b + 1)) << endl;
+		}
+	} else {
+		if (b > c) {
+			cout << ((a + c) > b ? 0 : (b - a - c + 1)) << endl;		
+		} else {
+			cout << ((a + b) > c ? 0 : (c - a - b + 1)) << endl;
+		}
+	}
+	
+	return 0;
+}

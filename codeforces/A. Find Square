@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <utility>
+
+using namespace std;
+
+int main()
+{
+	int n, m;
+	cin >> n >> m;
+
+	string line;
+	vector<pair<int, int>> square;
+	for(int i = 0; i < n; i++) {
+		cin >> line;
+		for (int j = 0; j < m; j++) {
+			if (line[j] == 'B') {
+				square.push_back(make_pair(i+1, j+1));
+			}
+		}
+	}
+
+	int size = square.size();
+	cout << (square[0].first + square[size-1].first)/2 << " "
+		<< (square[0].second + square[size-1].second)/2 << endl;
+}

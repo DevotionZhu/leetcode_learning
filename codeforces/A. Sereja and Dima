@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	vector<int> nums(n);
+
+	for (int i = 0; i < n; i++) cin >> nums[i];
+
+	int start = 0, end = n - 1;
+	int first = 0, second = 0;
+	bool flag = true;
+	int maxTmp;
+	while (start <= end){
+		
+		if (nums[start] > nums[end]) {
+			maxTmp = nums[start];
+			start++;
+		} else {
+			maxTmp = nums[end];
+			end--;
+		}
+
+		if (flag) {
+			first += maxTmp;
+		} else {
+			second += maxTmp;
+		}
+
+		flag = !flag;
+	}
+
+	cout << first << " " << second << endl;
+}

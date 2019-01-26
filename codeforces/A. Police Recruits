@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	
+	int crime;
+	int untrusted = 0;
+	int policemen = 0;
+	while (cin >> crime) {
+		if (crime > 0) {
+			policemen = policemen < 0 ? crime : policemen + crime;		
+		} else {
+			policemen += crime;
+		}
+		if (policemen < 0) untrusted++; 
+	}
+	cout << untrusted << endl;
+}

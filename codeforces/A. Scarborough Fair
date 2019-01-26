@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	int input_len, input_op;
+	cin >> input_len >> input_op;
+	
+	string str;	
+	cin >> str;
+	
+	int start, end;
+	string c1, c2;
+	while (cin >> start >> end >> c1 >> c2) {
+		for (int i = start - 1; i < end; i++) {
+			if (str[i] == c1) str[i] = c2;
+		}
+	}
+	
+	cout << str << endl;
+	return 0;
+}

@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+
+using namespace std;
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	
+	string input;
+	cin >> input;
+	
+	int num = 0;
+	string res = "";
+	string pre, now = "1";
+	cin >> pre;
+	while (cin >> now) {
+		if (atoi(now.c_str()) <= atoi(pre.c_str())) {
+		    num++;
+			res += pre + " ";
+		}
+		pre = now;
+	}
+	cout << num + 1 << endl;
+	cout << (res + now) << endl;
+	return 0;
+}

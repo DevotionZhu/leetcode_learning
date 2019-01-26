@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+
+using namespace std;
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	
+	string input_n, input_s;
+	cin >> input_n >> input_s;
+	
+	int n = atoi(input_n.c_str());
+	
+	int s_continuous = 0, sum = 0;
+	for (int i = 0; i < n+1 ; i++) {
+		if (input_s[i] == 'x') {
+			s_continuous += 1;
+		} else {
+			sum += s_continuous - 2;
+			s_continuous = 0;	
+		}
+	}
+	cout << sum << endl;
+	return 0;
+}

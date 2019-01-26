@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cstdlib>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+	int length;
+	cin >> length;
+	
+	int *numbers = new int[length];
+	
+	int input;
+	int i = 0;
+	while (cin >> input) {
+		numbers[i] = input;
+		i++;	
+	}
+
+	// sort
+	sort(numbers, numbers + length);
+	
+	cout << numbers[(length - 1)/2] << endl;
+
+	delete [] numbers;
+}
+

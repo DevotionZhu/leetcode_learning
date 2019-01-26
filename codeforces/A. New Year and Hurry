@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int n, onRoadTime;
+	cin >> n >> onRoadTime;
+	
+	int remainTime = 4*60 - onRoadTime;
+	int i;
+	for (i = 1; i <= n; i++) {
+		remainTime -= 5*i;
+		if (remainTime < 0) {
+			cout << i - 1 << endl;
+			return 0;
+		}
+	}
+	
+	cout << n << endl;
+}

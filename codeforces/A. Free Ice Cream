@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+int main()
+{
+	long long n, x;
+	cin >> n >> x;
+	
+	char op;
+	long long num;
+	long long distress = 0, exist = x;
+	while (cin >> op >> num) {
+		if (op == '-') {
+			if (exist < num) {
+				distress++;
+			} else {
+				exist -= num;
+			}
+		} else {
+			exist += num;
+		}
+	}
+
+	cout << exist << " " << distress << endl;
+}

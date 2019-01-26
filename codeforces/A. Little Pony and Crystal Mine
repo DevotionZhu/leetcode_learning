@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+void printDiamond(int diamond, int n) {
+	int dotNum = (n - diamond)/2;
+	for (int i = 0; i < n; i++) {
+		if (i < dotNum || i >= (dotNum + diamond)) {
+			cout << "*";
+		} else {
+			cout << "D";
+		}
+	}
+}
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	int diamond = 1;	
+	for (int i = 0; i < n; i++) {
+		printDiamond(diamond, n);
+        	cout << endl;
+		if (i >= n/2) {
+			diamond -= 2;
+		} else {
+			diamond += 2;
+		}		
+	}
+}

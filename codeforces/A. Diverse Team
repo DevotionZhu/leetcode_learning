@@ -1,0 +1,31 @@
+#include <iostream>
+#include <map>
+
+using namespace std;
+
+int main()
+{
+	int n, k;
+	cin >> n >> k;
+
+	string tmp;
+	map<string, int> ranks;
+	int i = 1;
+	while (cin >> tmp) {
+		ranks[tmp] = i;
+		i++;
+	}
+
+	if (ranks.size() < k) {
+		cout << "NO" << endl;
+		return 0;	
+	} else {
+		cout << "YES" << endl;
+		int i = 0;
+		for (map<string, int>::iterator iter = ranks.begin(); 
+			iter != ranks.end() && i < k; iter++) {
+			cout << iter->second << " ";
+			i++;
+		}
+	}
+}

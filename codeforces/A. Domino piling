@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	int m, n;
+	cin >> m >> n;
+	
+	int horizontal = n/2;
+	int vertical = (n%2) * (m/2);
+	
+	cout << (horizontal*m + vertical) << endl;
+	return 0;
+}

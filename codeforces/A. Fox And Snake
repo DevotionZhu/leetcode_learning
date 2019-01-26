@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+void printLine(int m, char s) {
+	for (int i= 0; i < m; i++) {
+		cout << s;
+	}
+}
+
+
+int main()
+{
+	int m, n;
+	cin >> n >> m;
+	
+	bool front = true;
+	for (int i = 0; i < n; i++) {
+		if (i % 2 == 0) {
+			printLine(m, '#');		
+		} else {
+			if (front) {
+				printLine(m-1, '.');
+				printLine(1, '#');			
+			} else {
+				printLine(1, '#');
+				printLine(m-1, '.');
+			}
+			front = !front;
+		}
+		cout << endl;
+	}
+}

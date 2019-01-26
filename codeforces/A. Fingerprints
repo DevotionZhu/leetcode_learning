@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cstdlib>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+bool cmp(const pair<int,int> &p, const pair<int, int> &q) {
+	return p.second < q.second;
+}
+
+int main()
+{
+	int m, n;
+	cin >> m >> n;
+	
+	vector<int> nums(m);
+	vector<pair<int, int>> subNums;
+	int tmp;
+	
+	for (int i = 0; i < m; i++) cin >> nums[i];
+	for (int i = 0; i < n; i++) {
+		cin >> tmp;
+		vector<int>::iterator iter = find(nums.begin(), nums.end(), tmp);	
+		if (iter != nums.end()) {
+			subNums.push_back( make_pair(tmp, distance(nums.begin(), iter)) );
+		}	
+	}
+
+	sort(subNums.begin(), subNums.end(), cmp);
+
+	for (vector<pair<int, int>>::iterator it=subNums.begin(); it!=subNums.end(); ++it) {
+		cout << it->first << " ";
+	}
+	
+	cout << endl;
+	return 0;
+}

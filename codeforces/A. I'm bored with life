@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	long long x, y;
+	cin >> x >> y;
+	int t = x > y ? y : x;
+	
+	int factorial = 1;	
+	for (int i = 1; i <= t; i++) {
+		factorial *= i;
+	}
+
+	cout << factorial << endl;
+}

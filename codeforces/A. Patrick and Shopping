@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+#define MIN(a,b) ((a) < (b) ? (a) : (b))
+
+int main()
+{
+	int d1, d2, d3;
+	cin >> d1 >> d2 >> d3;
+    
+    int sum = 0;
+	if (d1 > d2 + d3) {
+		sum = 2*(d2 + d3);
+	} else if (d2 > d1 + d3) {
+		sum = 2*(d1 + d3);	
+	} else if (d3 > d1 + d2) {
+		sum = 2*(d1 + d2);	
+	} else {
+		sum = d1 + d2 + d3;	
+	}
+	cout << sum << endl;
+}

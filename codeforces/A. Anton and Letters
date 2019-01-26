@@ -1,0 +1,19 @@
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+int main()
+{
+	string tmp;
+	cin >> tmp;
+	
+	set<char> result;
+	if (tmp[1] != '}') result.insert(tmp[1]);
+
+	while (cin >> tmp) {
+		result.insert(tmp[0]);
+	}
+	
+	cout << result.size() << endl;
+}
