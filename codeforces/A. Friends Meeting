@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+    int a, b;
+    cin >> a >> b;
+    
+    int meetPoint = (a+b)/2;
+    
+    int x = abs(meetPoint - a);
+    int y = abs(meetPoint - b);
+    
+    cout << (x*(x+1)/2 + y*(y+1)/2) << endl;
+}

@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, k, t;
+    cin >> n >> k >> t;
+    
+    if (t <= k) {
+        cout << t << endl;
+    } else if (k < t && t <= n) {
+        cout << k << endl;
+    } else if (n < t && t < n+k) {
+        cout << (n + k - t) << endl;
+    } else {
+        cout << 0 << endl;
+    }
+}

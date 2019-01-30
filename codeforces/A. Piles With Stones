@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    
+    int count1 = 0, count2 = 0;
+    
+    vector<int> record1(n), record2(n);
+    
+    for (int i = 0; i < n; i++) cin >> record1[i];
+    for (int i = 0; i < n; i++) cin >> record2[i];
+    
+    for (int i = 0; i < n; i++) {
+        count1 += record1[i];
+        count2 += record2[i];
+    }
+    
+    if (count1 >= count2) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+}
