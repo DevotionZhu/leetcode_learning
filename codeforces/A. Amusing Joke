@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+#include <map>
+
+using namespace std;
+
+void addName(string s, map<char, int> &t) {
+    for (int i = 0; i < s.length(); i++) {
+        if (t.find(s[i]) != t.end()) {
+            t[s[i]] += 1;
+        } else {
+            t[s[i]] = 1;
+        }
+    }
+}
+
+bool isEqual(map<char, int> s, map<char, int> t) {
+    if (s.size() != t.size()) {
+        return false;
+    }
+
+    for (auto x: s) {
+        // cout << x.first << " " << x.second << endl;
+        if ( t.find(x.first) == t.end() || t[x.first] != x.second) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+int main()
+{
+    string a, b, c;
+    cin >> a >> b >> c;
+    
+    map<char, int> expect, actual;
+    addName(a, expect);
+    addName(b, expect);
+    addName(c, actual);
+    // cout << expect.size() << " " << actual.size() << endl;
+    if ( isEqual(expect, actual) ) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+}

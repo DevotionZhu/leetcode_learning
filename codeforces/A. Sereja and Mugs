@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, s;
+    cin >> n >> s;
+    
+    int tmp, max = 0, sum = 0;
+    while (cin >> tmp) {
+        sum += tmp;
+        if (max < tmp) max = tmp;
+    }
+    
+    // cout << sum << " " << max << endl;
+    
+    if (s >= sum - max) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+}

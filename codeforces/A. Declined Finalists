@@ -1,0 +1,19 @@
+#include <iostream>
+
+
+using namespace std;
+
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int t;
+    int maxN = 0;
+    while (cin >> t) {
+        if (maxN < t) maxN = t;
+    }
+    
+    cout << (maxN < 25 ? 0 : maxN - 25) << endl;
+}
