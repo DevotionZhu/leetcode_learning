@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string a, b;
+    cin >> a >> b;
+    
+    for (int i = 0; i < a.length(); i++) {
+        char m = tolower(a[i]);
+        char n = tolower(b[i]);
+        if (m < n) {
+            cout << -1 << endl;
+            return 0;
+        } else if (m > n) {
+            cout << 1 << endl;
+            return 0;
+        }
+    }
+    
+    cout << 0 << endl;
+}
