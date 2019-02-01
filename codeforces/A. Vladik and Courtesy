@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long a, b;
+    cin >> a >> b;
+    
+    long long i = 1;
+    bool turnA = true;
+    while (true) {
+        if (turnA) {
+            a -= i;
+        } else {
+            b -= i;
+        }
+        
+        if (a < 0) {
+            cout << "Vladik" << endl;
+            break;
+        } else if (b < 0) {
+            cout << "Valera" << endl;
+            break;
+        }
+        
+        i++;
+        turnA = !turnA;
+    }
+}

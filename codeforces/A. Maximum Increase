@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    
+    int tmp;
+    int maxLen = 0, tmpLen = 0;
+    int pre = 0;
+    while (cin >> tmp) {
+        if (tmp > pre) {
+            tmpLen += 1;
+        } else {
+            tmpLen = 1;
+        }
+        
+        if (maxLen < tmpLen) maxLen = tmpLen;
+        
+        pre = tmp;
+    }
+    
+    cout << maxLen << endl;
+}

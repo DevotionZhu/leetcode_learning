@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    
+    int x,y;
+    int a = 0;
+    while (cin >> x >> y) {
+        if (a < x + y) a = x + y;
+    }
+    
+    cout << a << endl;
+}

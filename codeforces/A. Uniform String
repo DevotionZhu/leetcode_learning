@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+static string TABLE="abcdefghijklmnopqrstuvwxyz";
+
+void printS(const int n, const int k) {
+    
+    for (int i = 0; i < n; i++) {
+        cout << TABLE[i%k];
+    }
+    
+    cout << endl;
+}
+
+int main()
+{
+    int t;
+    cin >> t;
+    
+    int n, k;
+    
+    while (cin >> n >> k) {
+        printS(n, k);
+    }
+}

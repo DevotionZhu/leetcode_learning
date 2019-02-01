@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    long long n;
+    cin >> n;
+    
+    vector<long long> a(n), b(n);
+    long long remain = 0;
+    for (long long i = 0; i < n; i++) {
+        cin >> a[i];
+        remain += a[i];
+    } 
+    
+    long long firstMax = b[0], secMax = b[0];
+    for (long long i = 0; i < n; i++) {
+        cin >> b[i];
+        
+        if (b[i] > secMax && b[i] <= firstMax) {
+            secMax = b[i];
+        } else if (b[i] > firstMax) {
+            secMax = firstMax;
+            firstMax = b[i];
+        }
+        
+        if (secMax > firstMax) swap(firstMax, secMax);
+        
+        // cout << firstMax << " " << secMax << endl;
+    }
+    // cout << firstMax << " " << secMax << endl;
+    cout << (remain > firstMax + secMax ? "NO" : "YES") << endl;
+    
+}

@@ -1,0 +1,23 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+#define LENGTH 10
+
+int main()
+{
+    int n;
+    cin >> n;
+    
+    string s, t;
+    cin >> s >> t;
+    
+    int sum = 0;
+    for (int i = 0; i < s.length(); i++) {
+        int dis = abs(s[i] - t[i]);
+        sum += min(dis, LENGTH - dis);
+    }
+    
+    cout << sum << endl;
+}

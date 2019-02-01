@@ -1,0 +1,58 @@
+#include <iostream>
+#include <map>
+
+using namespace std;
+
+int main()
+{
+    
+    map<int, int> table;
+    int tmp;
+    int sum = 0;
+    while (cin >> tmp) {
+        if (table.find(tmp) == table.end()) {
+            table[tmp] = 1;
+        } else {
+            table[tmp] += 1;
+        }
+        sum += tmp;
+    }
+    
+    
+    int size = table.size();
+    if (size == 1) {
+        for (auto t: table) {
+            sum -= 3*t.first;
+        }
+    } else if (size == 2) {
+        for (auto t: table) {
+            if (t.second == 3) {
+                int x = 3*t.first;
+                sum = sum-x > x ? x : sum - x;
+            } else if (t.second == 4) {
+                sum -= 3*t.first;
+            }
+        }
+    } else if (size == 3) {
+        int x = 0;
+        for (auto t: table) {
+            if (t.second == 3) {
+                sum -= 3*t.first;
+            } else if (t.second == 2) {
+                if (x == 0) {
+                    x = 2*t.first;
+                } else {
+                    sum = x > 2*t.first ? sum -x: sum - 2*t.first;
+                }
+            }
+        }
+    } else if (size == 4) {
+        for (auto t: table) {
+            if (t.second == 2) {
+                sum -= 2*t.first;
+            }
+        }
+    }
+    
+    cout << sum << endl;
+}

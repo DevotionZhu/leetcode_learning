@@ -1,0 +1,25 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    int w, h;
+    cin >> w >> h;
+    
+    int u1,d1,u2,d2;
+    cin >> u1 >> d1 >> u2 >> d2;
+    if (d1 < d2) {
+        swap(u1, u2);
+        swap(d1, d2);
+    }
+    
+    int res = w + (h-d1+1)*(h+d1)/2;
+    
+    res = res <= u1 ? (d1-d2)*(d1-1+d2)/2 : (res-u1)+(d1-d2)*(d1-1+d2)/2;
+    
+    res = res < u2 ? d2*(d2-1)/2 : (res-u2)+d2*(d2-1)/2 ;
+    
+    cout << res << endl;
+}

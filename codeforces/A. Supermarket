@@ -1,0 +1,19 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    
+    int x, y;
+    double minUnit = 100;
+    while (cin >> x >> y) {
+        double unit = (double)x/y;
+        if (minUnit > unit) minUnit = unit;
+    }
+    
+    cout << setprecision(8) << minUnit*m << endl;
+}

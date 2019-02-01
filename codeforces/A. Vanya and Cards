@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+    int n, x;
+    cin >> n >> x;
+    
+    int tmp;
+    int sum = 0;
+    while (cin >> tmp) {
+        sum += tmp;
+    }
+    
+    cout << ( abs(sum)%x ? abs(sum)/x + 1 : abs(sum)/x) << endl;
+}

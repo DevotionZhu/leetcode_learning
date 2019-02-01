@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    
+    int tmp;
+    int resv = m;
+    while (cin >> tmp) {
+        if (tmp >= resv) {
+            cout << ((tmp - resv)/m + 1 )<< " ";
+            resv = m - (tmp - resv)%m;
+        } else {
+            cout << 0 << " ";
+            resv -= tmp;
+        }
+        
+    }
+}
