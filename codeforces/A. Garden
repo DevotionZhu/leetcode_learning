@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,k;
+    cin >> n >> k;
+    
+    int tmp;
+    int maxB = 0;
+    while (cin >> tmp) {
+        if (k%tmp == 0 && maxB < tmp) {
+            maxB = tmp;
+        }
+    }
+    
+    cout << k/maxB << endl;
+}

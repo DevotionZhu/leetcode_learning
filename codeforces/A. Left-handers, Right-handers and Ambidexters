@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+    int l, r, a;
+    cin >> l >> r >> a;
+    
+    
+    int res = 0;
+    if (abs(l-r) <= a) {
+        res = max(l,r) + (a - abs(l-r))/2;
+    } else {
+        res = min(l,r) + a;
+    }
+    cout << res*2 << endl;
+}

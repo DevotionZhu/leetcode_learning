@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <set>
+
+using namespace std;
+
+int main()
+{
+    string s;
+    cin >> s;
+    
+    static string table = "abcdefghijklmnopqrstuvwxyz";
+    
+    set<string> result;
+    for (int i = 0; i <= s.length(); i++) {
+        for (int j = 0; j < 26; j++) {
+            string tmp(1, table[j]);
+            string ss(s);
+            string st = ss.insert(i, tmp);
+            result.insert(st);
+        }
+    }
+    
+    cout << result.size() << endl;
+}

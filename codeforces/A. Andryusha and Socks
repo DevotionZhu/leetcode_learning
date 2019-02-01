@@ -1,0 +1,26 @@
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    
+    int tmp;
+    set<int> table;
+    int num = 0, maxNum = 0;
+    while (cin >> tmp) {
+        if (table.find(tmp) == table.end()) {
+            table.insert(tmp);
+            num += 1;
+        } else {
+            num -= 1;
+        }
+        
+        if (maxNum < num) maxNum = num;
+    }
+    
+    cout << maxNum << endl;
+}
