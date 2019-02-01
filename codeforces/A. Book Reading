@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long n, t;
+    cin >> n >> t;
+    
+    if (t == 0) {
+        cout << 0 << endl;
+        return 0;
+    }
+    
+    long tmp;
+    long num = 0;
+    while (cin >> tmp) {
+        t -= 86400 - tmp;
+        num += 1;
+        if (t <= 0) {
+            break;
+        }
+    }
+    
+    cout << num << endl;
+}

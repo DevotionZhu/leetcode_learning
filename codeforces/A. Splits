@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    
+    if (n == 1) {
+        cout  << 1 << endl;
+        return 0;
+    }
+    
+    int i = 2;
+    int count = 0;
+    while (i*2 <= n) {
+        i++;
+        count += 1;
+    }
+    
+    cout << (count + 2) << endl;
+}

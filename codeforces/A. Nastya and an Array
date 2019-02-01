@@ -1,0 +1,20 @@
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    
+    int tmp;
+    set<int> exist;
+    while (cin >> tmp) {
+        if (tmp != 0) {
+            exist.insert(tmp);
+        }
+    }
+    
+    cout << exist.size() << endl;
+}
