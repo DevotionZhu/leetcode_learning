@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+bool isPalin(string s) 
+{
+    string t(s);
+    reverse(t.begin(), t.end());
+    
+    if (t == s) return true;
+    return false;
+}
+
+int main()
+{
+    string num;
+    cin >> num;
+    
+    int n = num.length();
+    string tmp(num);
+    for (int i = 0; i < n; i++) {
+        if ( isPalin(tmp) ) {
+            cout << "YES" << endl;
+            return 0;
+        }
+        tmp = "0" + tmp;
+    }
+    
+    cout << "NO" << endl;
+}

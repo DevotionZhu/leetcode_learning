@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+bool isDiagonal(char s, char t) {
+    if ( (s == 'R' && t == 'U') || (s == 'U' && t == 'R')) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int main()
+{
+    int n;
+    string s;
+    cin >> n >> s;
+    
+    char pre = s[0];
+    int num = 0;
+    bool flag = false;
+    for (int i = 1; i < n; i++) {
+        char now = s[i];
+        if (flag) {
+            pre = now;
+            flag = false;
+        } else {
+            if ( isDiagonal(pre, now) ) {
+                flag = true;
+                num++;
+            } else {
+                pre = now;
+            }
+        }
+    }
+    
+    cout << (n - num) << endl;
+    
+}
