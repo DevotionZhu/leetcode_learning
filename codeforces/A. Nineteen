@@ -1,0 +1,28 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    string s;
+    cin >> s;
+    
+    int numN = 0, numE = 0, numI = 0, numT = 0;
+    for (auto x: s) {
+        if (x == 'n') {
+            numN += 1;
+        } else if (x == 'e') {
+            numE += 1;
+        } else if (x == 'i') {
+            numI += 1;
+        } else if (x == 't') {
+            numT += 1;
+        }
+    }
+    
+    int distinct = min(numE/3, min(numI, numT) );
+    int result = min(distinct, (numN - 1)/2 );
+    
+    cout << result << endl;
+}
